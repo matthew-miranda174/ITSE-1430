@@ -1,5 +1,5 @@
-﻿/*
- * ITSE 1430
+﻿/*Matthew Miranda
+ * ITSE 1430 - Spring 2018
  * 
  * Section 1
  */
@@ -20,16 +20,19 @@ namespace Nile.host
             bool quit = false;
             while (!quit)
             {
+                //Equality
+                bool IsEqual = quit.Equals(10);
+
                 //Display menu
                 char choice = DisplayMenu();
                 //Process mennu selection
-                switch (choice)
+                switch (Char.ToUpper(choice))
                 {
-                    case 'l':
+                    //case 'l':
                     case 'L': ListProducts(); break;
-                    case 'a':
+                    //case 'a':
                     case 'A': AddProduct(); break;
-                    case 'q':
+                    //case 'q':
                     case 'Q':quit = true; break;
                 };
             };
@@ -46,6 +49,7 @@ namespace Nile.host
             //Get description
             _description = ReadString("Enter oiptional description ", false);
         }
+        //ReadDecimal
         private static decimal ReadDecimal( string message, decimal minValue )
         {
             do
@@ -53,7 +57,10 @@ namespace Nile.host
                 Console.Write(message);
 
                 string value = Console.ReadLine();
-                               
+                 
+                //If (Decimal.Try.Parse(value, out decimal result) && result >=
+                // return result;
+
                 if (Decimal.TryParse(value, out decimal result))
                 {
                     //If not required or not empty
@@ -61,7 +68,10 @@ namespace Nile.host
                         return result;
                 };
 
-                Console.WriteLine("Value must be >= {0}" + minValue);
+                //Formatting Strings
+                //Console.WriteLine("Value must be >= {0}" + minValue);
+                string msg = String.Format("Value must be >= {0}" + minValue);
+                Console.WriteLine(msg);
             } while (true);
         }
         private static string ReadString( string message, bool isRequired )
@@ -87,27 +97,64 @@ namespace Nile.host
                 Console.WriteLine("L)ist Products");
                 Console.WriteLine("A)dd Product");
                 Console.WriteLine("Q)uit");
-
+                
                 string input = Console.ReadLine();
 
-                if (input == "L" || input == "l")
+                //Remove White SPace
+                input = input.Trim();
+                //input.ToLower();
+                input = input.ToUpper();
+
+                //Padding
+                //input = input.PadLeft(10);
+
+                //Starts With
+                //input.StartWith(@"\");
+
+
+                //Substring
+                //string newValue = input.Substring(0, 10);
+
+               // if (input == "L")
+
+                if(String.Compare(input, "L", true) == 0)
                     return input[0];
-                else if (input == "A" || input == "a")
+                else if (input == "A")
                     return input[0];
-                else if (input == "Q" || input == "q")
+                else if (input == "Q")
                     return input[0];
                 
                     Console.WriteLine("Please Choose A Valid Option");
             } while (true);
         }
 
+        //List Product
         static void ListProducts()
         {
-            if (_name != null && _name != "")
+            //if (_name != null && _name != "")
+            if(!String.IsNullOrEmpty(_name))
             {
-                // Display a product
-                Console.WriteLine(_name);
-                Console.WriteLine(_price);
+                // Display a product - name[$price]
+                //                      <description
+
+                //String Formatting
+                //var msg = String.Format("(0) [$(1)]", _name, _price);
+
+
+                //String Contatenation
+                //var msg = _name + " [$" + _price + "]";
+
+                //string concat part 2
+                //var msg = String.Concat(_name, "[$", _price, "]");
+
+                //String Interolation
+                string msg = $"{_name} [$(_price)]";
+                Console.WriteLine(msg);
+                            
+                //Console.WriteLine(_name);
+                //Console.WriteLine(_price);
+
+                if (!String.IsNullOrEmpty(_description))
                 Console.WriteLine(_description);
             } else
                 Console.WriteLine("No Products");
