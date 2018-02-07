@@ -141,7 +141,7 @@ namespace Matthew_Miranda.MovieLib.Host
                 Console.WriteLine("No Movies");
         }
 
-        // Data for a Product
+        // Data for a Movie
         static string _name;
         static decimal _time;
         static string _description;
