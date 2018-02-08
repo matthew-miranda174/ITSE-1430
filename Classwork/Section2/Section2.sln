@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nile.Windows", "Nile.Windows\Nile.Windows.csproj", "{B158F513-9FE8-4C6A-B4BA-B093A3F07ACE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nile", "Nile\Nile.csproj", "{50B5BC2A-EE03-4FE4-9CB3-06F4846F7583}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B158F513-9FE8-4C6A-B4BA-B093A3F07ACE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B158F513-9FE8-4C6A-B4BA-B093A3F07ACE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B158F513-9FE8-4C6A-B4BA-B093A3F07ACE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B158F513-9FE8-4C6A-B4BA-B093A3F07ACE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50B5BC2A-EE03-4FE4-9CB3-06F4846F7583}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50B5BC2A-EE03-4FE4-9CB3-06F4846F7583}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50B5BC2A-EE03-4FE4-9CB3-06F4846F7583}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50B5BC2A-EE03-4FE4-9CB3-06F4846F7583}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {204E8CF7-5151-44DA-AC51-17C342EE120B}
+	EndGlobalSection
+EndGlobal
