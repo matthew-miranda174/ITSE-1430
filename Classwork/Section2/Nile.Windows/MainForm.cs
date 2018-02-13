@@ -19,14 +19,23 @@ namespace Nile.Windows
         protected override void OnLoad( EventArgs e )
         {
             base.OnLoad(e);
+        
 
             var product = new Product();
 
-            var name = product.GetName();
-            //product.Name = "Product A";
-            product.SetName("Product A");
-            //product.Description = "Name";
+            Decimal.TryParse("123", out decimal _price);
 
+            var name = product.Name;
+            //var name = product.GetName();
+            product.Name = "Product A";
+            product.Price = 50;
+            product.IsDiscontinued = true;
+
+            //product.ActualPrice = 10;
+            var price2 = product.ActualPrice;
+
+            //product.SetName("Product A");
+            //product.Description = "Name";
             var error = product.Validate();
 
             var str = product.ToString();
@@ -37,5 +46,6 @@ namespace Nile.Windows
             //productB.Description = product.Description;
             error = productB.Validate();
         }
+        
     }
 }
