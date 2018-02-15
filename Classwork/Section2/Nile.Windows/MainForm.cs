@@ -46,6 +46,56 @@ namespace Nile.Windows
             //productB.Description = product.Description;
             error = productB.Validate();
         }
-        
+
+        private void menuStrip1_ItemClicked( object sender, ToolStripItemClickedEventArgs e )
+        {
+
+        }
+
+        private void OnProductAdd( object sender, EventArgs e )
+        {
+            var form = new ProductDetailForm();
+            form.Text = "Add Product";
+
+            // Show Form modally
+            var result = form.ShowDialog(this);
+            if (result != DialogResult.OK)
+                return;
+
+            _product = form.Product;
+        }
+
+        private void OnProductRemove( object sender, EventArgs e )
+        {
+            if (MessageBox.Show(this, "Are you sure?", "Remove Product"
+                , MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                return;
+
+            //TODO: Remove Product
+            MessageBox.Show("Not Implemented");
+        }
+
+        private void miProductEdit_Click( object sender, EventArgs e )
+        {
+            MessageBox.Show(this, "Not implemented", "Product Edit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        }
+
+        private void miFileExit_Click( object sender, EventArgs e )
+        {
+            MessageBox.Show(this, "Not implemented", "File Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        }
+
+        private void aboutToolStripMenuItem_Click( object sender, EventArgs e )
+        {
+            MessageBox.Show(this, "Not implemented", "About Product", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        }
+
+        private bool ShowConformation (string message, string title)
+        {
+            return MessageBox.Show(this, message, title, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes;
+        }
+
+
+        private Product _product;
     }
 }
